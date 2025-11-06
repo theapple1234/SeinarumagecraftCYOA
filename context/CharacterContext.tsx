@@ -729,7 +729,7 @@ export const CharacterProvider: React.FC<{ children: ReactNode }> = ({ children 
     };
 
     const handleToggleBoost = (section: string) => {
-      const toggle = (isBoosted: boolean, setBoosted: (value: boolean), sigil: keyof typeof availableSigilCounts) => {
+      const toggle = (isBoosted: boolean, setBoosted: (value: boolean) => void, sigil: keyof typeof availableSigilCounts) => {
         if (isBoosted) setBoosted(false);
         else if (availableSigilCounts[sigil] > 0) setBoosted(true);
       };
